@@ -1,7 +1,7 @@
 defmodule Platformer.Accounts.Player do
   use Ecto.Schema
   import Ecto.Changeset
-  # alias Platform.Accounts.Player
+  alias Platformer.Accounts.Player
 
   schema "players" do
     field :display_name, :string
@@ -12,11 +12,11 @@ defmodule Platformer.Accounts.Player do
 
     timestamps()
   end
-# see page 48 Elm and Elixir Tutorial
+
   @doc false
-  def changeset(player, attrs) do
+  def changeset(%Player{} = player, attrs) do
     player
-    |> cast(attrs, [:display_name, :password, :username, :score])
+    |> cast(attrs, [:display_name, :password, :score, :username])
     |> validate_required([:username])
     |> unique_constraint(:username)
   end

@@ -26,7 +26,7 @@ defmodule PlatformerWeb.PlayerControllerTest do
     end
   end
 
-  describe "create player" do
+describe "create player" do
     test "redirects to show when data is valid", %{conn: conn} do
       conn = post conn, player_path(conn, :create), player: @create_attrs
 
