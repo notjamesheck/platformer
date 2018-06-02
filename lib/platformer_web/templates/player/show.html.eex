@@ -1,27 +1,13 @@
-<h2>New Player</h2>
+<h2>Show Player</h2>
 
-<%= form_for @changeset, player_path(@conn, :create), fn f -> %>
-  <%= if @changeset.action do %>
-    <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
-    </div>
-  <% end %>
+<ul>
+  <li> <strong>ID: </strong> <%= @player.id %> </li>
+  <li> <strong>Display Name: </strong> <%= @player.display_name %> </li>
+  <li> <strong>Username: </strong> <%= @player.username %> </li>
+  <li> <strong>Score: </strong> <%= @player.score %> </li>
+</ul>
 
-  <div class="form-group">
-    <%= label f, :username, "Player Username", class: "control-label" %>
-    <%= text_input f, :username, placeholder: "Enter username...", class: "form-\
-control" %>
-    <%= error_tag f, :username %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :password, "Player Password", class: "control-label" %>
-    <%= password_input f, :password, placeholder: "Enter password...", class: "f\
-orm-control" %>
-    <%= error_tag f, :password %>
-  </div>
-
-  <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
-  </div>
-<% end %>
+<span> <%= link "Edit", to: player_path(@conn, :edit, @player), class: "btn btn-d\
+efault" %> </span>
+<span> <%= link "Back", to: page_path(@conn, :index), class: "btn btn-default" %>\
+</span>
