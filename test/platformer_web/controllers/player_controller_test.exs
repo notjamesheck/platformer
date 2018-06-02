@@ -3,8 +3,9 @@ defmodule PlatformerWeb.PlayerControllerTest do
 
   alias Platformer.Accounts
 
-  @create_attrs %{score: 42, username: "some username"}
-  @update_attrs %{score: 43, username: "some updated username"}
+  @create_attrs %{password: "some password", username: "some username"}
+  @update_attrs %{display_name: "some updated display name", password: "so\
+me updated password", score: 43, username: "some updated username"}
   @invalid_attrs %{score: nil, username: nil}
 
   def fixture(:player) do

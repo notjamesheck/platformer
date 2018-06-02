@@ -7,7 +7,7 @@ defmodule Platformer.AccountsTest do
     alias Platformer.Accounts.Player
 
     @valid_attrs %{password: "some password", username: "some username"}
-    @update_attrs %{password: "some updated password", username: "some updated username"}
+    @update_attrs %{password: "some updated password", score: 43, username: "some updated username"}
     @invalid_attrs %{password: nil, username: nil}
 
     def player_fixture(attrs \\ %{}) do

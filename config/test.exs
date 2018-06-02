@@ -8,6 +8,7 @@ config :platformer, PlatformerWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+config :bcrypt_elixir, :log_rounds, 4
 
 # Configure your database
 config :platformer, Platformer.Repo,
